@@ -1,0 +1,8 @@
+#include<stdio.h>
+int main(){
+    int x, y;
+    printf("Enter x and y:");
+    scanf("%d %d", &x, &y);
+    (x>y)?printf("%d is largest", x):printf("%d is largest", y);
+    return 0;
+}
