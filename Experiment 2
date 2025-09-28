@@ -1,0 +1,63 @@
+#include<stdio.h>
+int main(){
+    int x, y, sum, sub, product, remainder;
+    printf("Enter value of x and y:");
+    scanf("%d%d", &x, &y);
+    sum = x+y;
+    printf("Sum = %d \n", sum);
+    sub = x-y;
+    printf("Sub = %d \n", sub);
+    product = x*y;
+    printf("Product = %d \n", product);
+    remainder = x%y;
+    printf("remainder = %d \n", remainder);
+    return 0;
+}
+
+
+
+
+#include<stdio.h>
+int main(){
+    float radius,side, length,breadth, area, perimeter;
+    printf("Enter radius:");
+    scanf("%f", &radius);
+    area = 3.14 * radius* radius ;
+    perimeter = 2*3.14*radius;
+    printf("Area of circle = %f\n", area);
+    printf("Perimeter of circle = %f\n", perimeter);
+    printf("Enter side of square: ");
+    scanf("%f", &side);
+    area = side*side;
+    perimeter = 4*side;
+    printf("Area of square= %f \n", area);
+    printf("Perimeter of square= %f \n", perimeter);
+    printf("Enter length and breadth of rectangle:");
+    scanf("%f%f", &length, &breadth);
+    area = length * breadth;
+    perimeter= 2 * (length + breadth);
+    printf("Area of rectangle= %f \n", area);
+    printf("Perimeter of rectangle= %f \n", perimeter);
+    return 0;
+}
+
+
+
+
+#include<stdio.h>
+#include<math.h>
+int main(){
+    float x1, x2, y1, y2, dist;
+    printf("Enter value of x1 and y1:");
+    scanf("%f%f", &x1, &y1);
+    printf("Enter value of x2 and y2;");
+    scanf("%f%f", &x2, &y2);
+    dist = sqrt(pow((x2-x1),2) + pow((y2-y1),2));
+    printf("Dist= %f", dist);
+    return 0;
+}
+
+
+
+
+
