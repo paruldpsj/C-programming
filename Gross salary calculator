@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+       
+    int B;
+    float h,d,gross;
+    scanf("%d", &B);
+    if(B<= 10000){
+    h = 20*B/100.0;
+    d = 30*B/100.0;
+    }
+    else if(B<= 20000){
+    h = 25*B/100.0;
+    d = 40*B/100.0;
+    }
+    else if(B>20000){
+    h = 30*B/100.0;
+    d = 50*B/100.0;
+    }  
+     gross = B + h +d;
+    printf("%.2f", gross);
+    return 0;
+}
