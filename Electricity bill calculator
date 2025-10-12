@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+      float u, bill=0;
+    scanf("%f", &u);
+    if(u>=50)
+    {
+        u=u-50;
+        bill = 50*0.50;
+    }
+    else
+    {
+        bill=u*0.50;
+        u=0;
+    }
+    
+    if(u>=100)
+    {
+        u=u-100;
+        bill=bill+(100*0.75);
+    }
+    else
+    {
+        bill=bill+(u*0.75);
+        u=0;
+    }
+    
+    if(u>=100){
+        u=u-100;
+        bill=bill+(100*1.20);
+    }
+    else
+    {
+        bill=bill+(u*1.20);
+        u=0;
+    }
+    if(u>0){
+        bill=bill+(u*1.50);
+    }
+    
+    bill = (0.2*bill)+bill;
+    printf("%.2f", bill); 
+    return 0;
+}
