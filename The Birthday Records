@@ -1,0 +1,91 @@
+Problem Statement
+
+Your school is creating a Digital Birthday Record System.
+
+Each student’s information must include:
+
+Their name
+Their date of birth (day, month, year)
+To store this properly, you are asked to use nested structures in C.
+
+Your job is to input one student’s basic info and birthday, store it using structures, and print it neatly.
+
+Your Task
+
+1) Create a structure Date with:
+
+int day
+int month
+int year
+2) Create a structure Student with:
+
+char name[50]
+struct Date dob
+3) Read all student details and print them in the required format.
+
+Input Format
+
+You need to enter four values:
+
+First line: Student’s name
+Second line: Day of birth (number)
+Third line: Month of birth (number)
+Fourth line: Year of birth (number)
+Constraints
+
+Name ≤ 50 characters
+1 ≤ day ≤ 31
+1 ≤ month ≤ 12
+1900 ≤ year ≤ 2100
+Output Format
+
+You must print the student’s name and date of birth like this:
+
+Name: <name>
+Date of Birth: <day>/<month>/<year>
+Sample Input 0
+
+Rohan
+15
+8
+2010
+Sample Output 0
+
+Name: Rohan
+Date of Birth: 15/8/2010
+
+
+
+
+
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+struct Date{
+    int day;
+    int month;
+    int year;
+};
+struct Student {
+    char name[50];
+    struct Date dob;
+};
+int main() {
+    struct Student s;
+
+    fgets(s.name, 50, stdin);
+    s.name[strcspn(s.name, "\n")] = '\0';
+    scanf("%d", &s.dob.day);
+    scanf("%d", &s.dob.month);
+    scanf("%d", &s.dob.year);
+
+    printf("Name: %s\n", s.name);
+    printf("Date of Birth: %d/%d/%d", s.dob.day, s.dob.month, s.dob.year);
+    return 0;
+}
+
+
+
