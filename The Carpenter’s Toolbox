@@ -1,0 +1,83 @@
+Problem Statement
+
+A carpenter named Mr. Oak is building furniture for a school. He keeps different wooden boards in his workshop, and each board is shaped like a rectangle.
+
+To speed up his work, Mr. Oak wants a small program that can calculate the area and perimeter of any rectangular board he chooses.
+
+Your job is to help him by writing a program using structures and functions.
+
+Your Task
+
+1) Create a structure named Rectangle with:
+
+int length
+int width
+2) Write two functions:
+
+int getArea(struct Rectangle r)
+int getPerimeter(struct Rectangle r)
+3) Input a rectangle’s length and width, store them in the structure, and print:
+
+The area
+The perimeter
+Input Format
+
+You need to enter two numbers:
+
+First line → length of the rectangle
+Second line → width of the rectangle
+Constraints
+
+1 ≤ length ≤ 10,000
+1 ≤ width ≤ 10,000
+Output Format
+
+Print the results exactly in this format:
+
+Area: <value>
+
+Perimeter: <value>
+
+Sample Input 0
+
+5
+3
+Sample Output 0
+
+Area: 15
+Perimeter: 16
+
+
+
+
+
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+struct Rectangle{
+    int length;
+    int width;
+};
+int getArea(struct Rectangle r){
+    return r.length*r.width;
+}
+int getPerimeter(struct Rectangle r){
+    return 2*(r.length+ r.width);
+}
+int main() {
+    struct Rectangle rect;
+    scanf("%d", &rect.length);
+    scanf("%d", &rect.width);
+    printf("Area: %d\n", getArea(rect));
+    printf("Perimeter: %d\n", getPerimeter(rect));
+
+   
+    return 0;
+}
+
+
+
+
