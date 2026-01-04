@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    char str[1000];
+    int i, count=0, con=0, flag=0;
+    fgets(str, 1000, stdin);
+    for(i=0; i<strlen(str); i++){
+        if(isalpha(str[i])){
+            str[i]= toupper(str[i]);
+            if(str[i]=='A'|| str[i]=='E'|| str[i]=='I'|| str[i]=='O'|| str[i]== 'U'){
+                count++;
+                flag = 1;
+            }
+            if(flag != 1)
+            {
+                con++;
+            }
+            flag = 0;
+            
+        }
+    }
+    
+    printf("%d %d", count, con);
+        
+    return 0;
+}
