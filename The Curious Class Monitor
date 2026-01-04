@@ -1,0 +1,86 @@
+Problem Statement
+
+You are the class monitor of Bright Future School.
+
+Your teacher asks you to record the details of a new student who just joined your class. To keep the data organized, you decide to store their information using a C structure.
+
+Your task is simple:
+
+Read the new student’s name, age, and grade, store them in a structure, and display them exactly in the required format so the school database can accept it.
+
+Input Format
+
+The input contains three lines:
+
+First line: student name
+Second line: age of student
+Third line: grade of student(a single uppercase letter (A–F))
+Constraints
+
+Name length ≤ 50
+Age between 3 and 20
+Grade is a single uppercase character
+Output Format
+
+Print the details exactly as follows:
+
+Name: name_value_here
+
+Age: age_value_here
+
+Grade: grade_value_here
+
+Sample Input 0
+
+Rohan
+12
+A
+Sample Output 0
+
+Name: Rohan
+Age: 12
+Grade: A
+
+
+
+
+
+
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+    struct Student{
+        char name[51];
+        int age;
+        char grade;
+    };
+    int main(){
+        struct Student s;
+        fgets(s.name, 51, stdin);
+        scanf("%d", &s.age);
+        scanf(" %c", &s.grade);
+        int i = 0;
+    while (s.name[i] != '\0') {
+        if (s.name[i] == '\n') {
+            s.name[i] = '\0';
+            break;
+        }
+        i++;
+    }
+    printf("Name: %s\n", s.name);
+    printf("Age: %d\n", s.age);
+    printf("Grade: %c\n", s.grade);
+
+        
+    return 0;
+}
+
+
+
+
+
+
+
+
