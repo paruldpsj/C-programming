@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int roll;
+    char name[100], branch[100], college[100];
+    char section;
+
+    scanf("%d", &roll);
+    getchar();
+
+    fgets(name, 100, stdin);
+    fgets(branch, 100, stdin);
+    scanf("%c", &section);
+    getchar();
+    fgets(college, 100, stdin);
+
+    name[strcspn(name, "\n")] = 0;
+    branch[strcspn(branch, "\n")] = 0;
+    college[strcspn(college, "\n")] = 0;
+
+    printf("Roll Number: %d\n", roll);
+    printf("Name: %s\n", name);
+    printf("Branch: %s\n", branch);
+    printf("Section: %c\n", section);
+    printf("College: %s\n", college);
+
+    return 0;
+}
