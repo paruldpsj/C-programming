@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    int n, i, j;
+    scanf("%d", &n);
+    int arr[n][n];
+    int primary=0, secondary=0;
+    for(i=0; i<n; i++){
+        for(j=0; j<n; j++){
+            scanf("%d", &arr[i][j]);
+            if(i==j)
+                primary += arr[i][j];
+            if(i+j == n-1)
+                secondary += arr[i][j];
+        }
+    } 
+    int total= primary+secondary;
+    if(n%2==1){
+        total -= arr[n/2][n/2];
+    }
+    printf("Sum of Primary Diagonal: %d\n", primary);
+    printf("Sum of Secondary Diagonal: %d\n", secondary);
+    printf("Total Sum of Both Diagonals: %d\n", total);
+
+   
+    
+    return 0;
+}
