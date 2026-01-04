@@ -1,0 +1,119 @@
+Problem Statement
+
+Your school is building a digital system to track student performance. Each student has:
+
+A roll number
+A name
+Marks in 4 subjects:
+Math
+Science
+English
+Computer
+All marks must be stored neatly using nested structures.
+
+Your job is to read the details of N students, calculate each student’s total marks, and finally print the details of the student who scored the highest total marks.
+
+Input Format
+
+1) First line: Number of students (N)
+
+2) For each student, enter 6 lines:
+
+Roll number
+Name (no spaces)
+Math marks
+Science marks
+English marks
+Computer marks
+Constraints
+
+1 ≤ N ≤ 100
+Roll number > 0
+Marks: 0 to 100
+If two or more students tie, print the one who appears last.
+Output Format
+
+Print the topper’s details in below format:
+
+Topper Details:
+Roll No: roll_here
+Name: name_here
+Total Marks: total_here
+Sample Input 0
+
+2
+101
+Rohan
+80
+70
+75
+85
+102
+Meena
+90
+85
+88
+92
+Sample Output 0
+
+Topper Details:
+Roll No: 102
+Name: Meena
+Total Marks: 355
+
+
+
+
+
+
+
+
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+struct Marks {
+    int math;
+    int science;
+    int english;
+    int computer;
+};
+
+struct Student {
+    int roll;
+    char name[50];
+    struct Marks m;
+    int total;
+};
+
+int main() {
+    int n, i, topper = 0;
+    struct Student s[100];
+
+    scanf("%d", &n);
+
+    for (i = 0; i < n; i++) {
+        scanf("%d", &s[i].roll);
+        scanf("%s", s[i].name);
+        scanf("%d", &s[i].m.math);
+        scanf("%d", &s[i].m.science);
+        scanf("%d", &s[i].m.english);
+        scanf("%d", &s[i].m.computer);
+
+        s[i].total = s[i].m.math + s[i].m.science +
+                     s[i].m.english + s[i].m.computer;
+
+        if (s[i].total >= s[topper].total) {
+            topper = i;
+        }
+    }
+
+    printf("Topper Details:\n");
+    printf("Roll No: %d\n", s[topper].roll);
+    printf("Name: %s\n", s[topper].name);
+    printf("Total Marks: %d\n", s[topper].total);
+  
+    return 0;
+}
