@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int n, i, j, count = 0;
+    scanf("%d", &n);
+    int a[n];
+
+    for (i = 0; i < n; i++) {
+        scanf("%d", &a[i]);
+    }
+
+    for (i = 0; i < n; i++) {
+        int freq = 0;
+
+        for (j = 0; j < n; j++) {
+            if (a[i] == a[j]) {
+                freq++;
+            }
+        }
+
+        if (freq > 1) {
+            int seen = 0;
+            for (j = 0; j < i; j++) {
+                if (a[i] == a[j]) {
+                    seen = 1;
+                    break;
+                }
+            }
+            if (!seen) {
+                count++;
+            }
+        }
+    }
+
+    printf("%d", count);  
+    return 0;
+}
